@@ -1,0 +1,16 @@
+local toggle = false
+
+function onToggle()
+  toggle = not toggle
+  if toggle then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/AzureServicess/ESP/main/Da%20Hood/lua"))()
+  else
+    esp.enabled = false
+  end
+end
+
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
+  if input.KeyCode == Enum.KeyCode.T then
+    onToggle()
+  end
+end)
